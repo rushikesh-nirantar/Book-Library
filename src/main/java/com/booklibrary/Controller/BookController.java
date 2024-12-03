@@ -46,4 +46,14 @@ public class BookController {
         bookService.deleteById(id);
         return ("Book Deleted");
     }
+    @PostMapping("/getBookCountByTitle/{title}")
+    public int getBookCountByTitle(@PathVariable String title){
+        int count = bookService.availableBooksCountByTitle(title);
+        return (count);
+    }
+    @GetMapping("/isBookAvaliable/{id}")
+    public boolean isBookAvaliable(@PathVariable Long id){
+       boolean book = bookService.isBookAvaliable(id);
+        return book;
+    }
 }
