@@ -44,4 +44,15 @@ public class BookService {
     public void deleteById(Long id){
         bookRepository.deleteById(id);
     }
+    public int availableBooksCountByTitle(String title){
+        int book = bookRepository.findByTitle(title).getAvailableCopies();
+        return (book);
+    }
+    public boolean isBookAvaliable(Long id){
+        int count= bookRepository.findById(id).get().getAvailableCopies();
+        if(count>0){
+            return true;
+        }
+        return false;
+    }
 }

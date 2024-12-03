@@ -35,5 +35,9 @@ public class UserService {
     public void deleteUser(Long id){
         usersRepository.deleteById(id);
     }
+    public String borrowedBooksByUser(Long id){
+      //  User user= usersRepository.get().List<borrowedBooksByUser(id)>;
+        return null;
+    }
 
 }
